@@ -112,24 +112,47 @@ header {
 
 
 .button {
+    -webkit-transition: -webkit-transform .1s;
+    transition: -webkit-transform .1s;
+    -o-transition: transform .1s;
     transition: transform .1s;
+    transition: transform .1s, -webkit-transform .1s;
 }
 .button:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
 }
 header .logo {
-    animation-name: logo-animation;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    -webkit-animation-name: logo-animation;
+            animation-name: logo-animation;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
 }
-@keyframes logo-animation {
+@-webkit-keyframes logo-animation {
     50% {
-        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
     }
 
     100% {
-        transform: scale(1);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+}
+@keyframes logo-animation {
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
 }
 
@@ -204,22 +227,22 @@ header .logo {
     padding: 50px 50px 80px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    .cond-item-desc {
+}
+.cond-item .cond-item-desc{
         margin-top: 15px;
-    }
 }
 .cond-item1 {
     position: relative;
     grid-column-start: 1;
     grid-column-end: 3;
     padding-left: 212px;
-    span {
-        position: absolute;
-        left: 50px;
-    }
-    .cond-item-desc {
-        padding-bottom: 50px;
-    }
+}
+.cond-item1 .cond-item-desc {
+    padding-bottom: 50px;
+}
+.cond-item1 span{  
+    position: absolute;
+    left: 50px;   
 }
 .bg3 {
     position: absolute;
@@ -235,10 +258,10 @@ header .logo {
     grid-row-start: 2;
     grid-row-end: 3;
     padding-left: 212px;
-    span {
-        position: absolute;
-        left: 50px;
-    }
+}
+.cond-item:nth-child(3) span {
+    position: absolute;
+    left: 50px;
 }
 .cond-item:nth-child(4) {
     grid-row-start: 3;
@@ -253,10 +276,10 @@ header .logo {
     grid-row-start: 5;
     grid-row-end: 7;
     position: relative;
-    span {
-        position: absolute;
-        left: 50px;
-    }
+}
+.cond-item:nth-child(6) span {
+    position: absolute;
+    left: 50px;
 }
 .cond-item:nth-child(7) {
     grid-row-start: 6;
@@ -268,27 +291,25 @@ header .logo {
 .cond_text {
     padding-top: 184px;
 }
-.cond-item {
-    span {
+.cond-item h3{ 
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -0.36px
+}
+.cond-item .cond-item-desc {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+}
+.cond-item span{
         display: block;
         font-size: 96px;
         font-weight: 900;
         line-height: 100%;
         letter-spacing: -0.96px;
         margin-bottom: 35px;
-    }
-    h3 {
-        font-size: 36px;
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: -0.36px;
-    }
-    .cond-item-desc {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: -0.2px;
-    }
 }
 .complect {
     width: 100%;
@@ -308,7 +329,19 @@ header .logo {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    .complect-header-title {
+}
+.complect-header .complect-header-desc {
+    width: 100%;
+    color: #000;
+    font-family: 'Inter';
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.14px;
+    margin-top: 15px;
+}
+.complect-header .complect-header-title {
     color: #000;
     text-align: center;
     font-size: 48px;
@@ -316,34 +349,20 @@ header .logo {
     line-height: 100%;
     letter-spacing: -0.48px;
     }
-    .complect-header-desc {
-        width: 100%;
-        color: #000;
-        font-family: 'Inter';
-        text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 100%;
-        letter-spacing: -0.14px;
-        margin-top: 15px;
-    }
-}
-.complect-item {
-    h4 {
-        color: #000;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 100%;
-        letter-spacing: -0.32px;
-    }
-    span {
+.complect-item  span {
         color: #7C7C7C;
         font-family: 'Inter';
         font-size: 16px;
         font-weight: 400;
         line-height: 100%;
         letter-spacing: -0.16px;
-    }
+}
+.complect-item h4 {
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.32px;
 }
 .complect-block {
     display: grid;
@@ -437,22 +456,19 @@ fieldset {
         -ms-flex-direction: row;
             flex-direction: row;
 }
-.card-body {
-    h4 {
-        color: #000000;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 100%;
-        letter-spacing: -0.2px;
-    }
-    span {
+.card-body span{
         color: #767676;
         font-size: 14px;
         font-weight: 700;
         line-height: 100%;
         letter-spacing: -0.14px;
-    }
-
+}
+.card-body h4{
+        color: #000000;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -0.2px;
 }
 .card-image {
     height: 80px;
@@ -527,8 +543,13 @@ fieldset {
         right: -10vw;
     }
     .cond-block {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .cond-block {
         width: 80vw;
@@ -577,8 +598,11 @@ fieldset {
         margin-right: 102px;
     }
     .complect-block {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     .complect-item {
         width: 47%;
@@ -605,7 +629,6 @@ fieldset {
         right: -16vh;
     }
 }
-
 @media screen and (max-width:767px) {
     .container {
         width: 85vw;
@@ -633,8 +656,13 @@ fieldset {
         right: -10vw;
     }
     .cond-block {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .cond-block {
         width: 85vw;
@@ -707,9 +735,16 @@ fieldset {
     padding-left: 50px;
     }
     .complect-block {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
     .complect-item {
         width: 47%;
@@ -756,7 +791,8 @@ fieldset {
     }
     .form-order .order-write {
         width: 100%;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     }
     .order {
         background: url(../assets/images/components/bg\ 2.png);
@@ -782,9 +818,16 @@ fieldset {
         width: 100%;
     }
     .footer-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
     }
     .footer-content .logo {
         margin-top: 60px;
